@@ -14,49 +14,7 @@ co(function* () {
         headers: {
             "Content-Type": "application/x-www-form-urlencoded",
         },
-        data: querystring.stringify({
-            LM_MST_prop_fmtYNNT: "1",
-            LM_MST_prop_cdYYNT: "1,9,10,11,12,13,14",
-            LM_MST_mls_noYYNT: "",
-            // Minimum Price
-            LM_MST_list_prcYNNB: "",
-            // Maximum Price
-            LM_MST_list_prcYNNE: "175000",
-            "LM_MST_prop_cdYNNL[]": "9",
-            // Minimum Square Footage
-            LM_MST_sqft_nYNNB: "",
-            // Maximum Square Footage
-            LM_MST_sqft_nYNNE: "",
-            // Minimum Year Built
-            LM_MST_yr_bltYNNB: "",
-            // Maximum Year Built
-            LM_MST_yr_bltYNNE: "",
-            // Minimum Bedrooms
-            LM_MST_bdrmsYNNB: "3",
-            // Maximum Bedrooms
-            LM_MST_bdrmsYNNE: "",
-            // Minimum Bathrooms
-            LM_MST_bathsYNNB: "2",
-            // Maximum Bathrooms
-            LM_MST_bathsYNNE: "",
-            LM_MST_hbathYNNB: "",
-            LM_MST_hbathYNNE: "",
-            // County
-            "LM_MST_countyYNCL[]": "ALA",
-            LM_MST_str_noY1CS: "",
-            LM_MST_str_namY1VZ: "",
-            LM_MST_remarksY1VZ: "",
-            openHouseStartDt_B: "",
-            openHouseStartDt_E: "",
-            ve_info: "",
-            ve_rgns: "1",
-            LM_MST_LATXX6I: "",
-            poi: "",
-            count: "1",
-            key,
-            isLink: "0",
-            custom: "",
-        }),
+        data: querystring.stringify(Object.assign({key}, require("./request.json"))),
     });
 
     let dfd = Promise.defer();
